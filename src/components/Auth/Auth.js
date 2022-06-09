@@ -8,7 +8,7 @@ import {
   Container,
 } from "@material-ui/core";
 import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from "./Input";
 import { signin, signup } from "../../actions/auth";
@@ -46,6 +46,7 @@ const Auth = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
   };
+
 
 
   return (
@@ -112,6 +113,7 @@ const Auth = () => {
                   ? "Already have an account? Sign in"
                   : "Don't have an account? Sign up"}
               </Button>
+              <Button component={Link} to="/resetpassword" variant="contained" color="primary">Forgot Password?</Button>
             </Grid>
           </Grid>
         </form>

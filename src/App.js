@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Auth from "./components/Auth/Auth";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
+import CalendarApp from "./components/Calendar/CalendarApp";
 
 const App = () => {
   return (
@@ -12,10 +13,12 @@ const App = () => {
       <Container maxWidth="xl">
         <Navbar />
         <Switch>
-            <Route path="/" exact component={() => <Redirect to="/posts" />} />
+            <Route path="/" exact component={() => <Redirect to="/auth" />} />
             <Route path="/posts" exact component={Home} />
             <Route path="/posts/search" exact component={Home} />
             <Route path="/auth" exact component={Auth} />
+            <Route path="/resetpassword" exact component={ResetPassword} />
+            <Route path="/calendar" exact component={CalendarApp} />
         </Switch>
       </Container>
     </BrowserRouter>
